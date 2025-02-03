@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Snoopy X's Creepy Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #1a1a1a;
+            padding: 20px;
+            text-align: center;
+            font-size: 2em;
+        }
+        h1 {
+            color: #ff5733;
+        }
+        .content {
+            padding: 20px;
+        }
+        .fact, .knowledge, .bio, .quiz {
+            background-color: #333;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        footer {
+            background-color: #1a1a1a;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        a {
+            color: #ff5733;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .btn {
+            background-color: #ff5733;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #e04e2d;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Snoopy X's Creepy Facts</h1>
+    </header>
+
+    <div class="content">
+        <!-- Welcome Page -->
+        <div id="welcome-screen">
+            <h2>Welcome to Snoopy X's Creepy Facts!</h2>
+            <p>Click the button below to begin your creepy journey.</p>
+            <button class="btn" onclick="showQuestions()">Continue</button>
+        </div>
+
+        <!-- Questions Page -->
+        <div id="questions" style="display:none;">
+            <h2>We have a couple of questions for you...</h2>
+            <form id="questions-form">
+                <label for="snoopy-like">What do you like about Snoopy X?</label><br>
+                <input type="text" id="snoopy-like" name="snoopy-like" placeholder="Enter your answer..."><br><br>
+
+                <label>Are you interested in Creepy Facts?</label><br>
+                <input type="radio" id="yes" name="creepy-interest" value="yes">
+                <label for="yes">Yes</label><br>
+                <input type="radio" id="no" name="creepy-interest" value="no">
+                <label for="no">No</label><br><br>
+
+                <!-- Submit Button -->
+                <button type="button" class="btn" onclick="submitForm()">Submit and See Creepy Facts</button>
+            </form>
+        </div>
+
+        <!-- Facts Page -->
+        <div id="facts" style="display:none;">
+            <button class="btn" onclick="showQuiz()">Test Your Knowledge</button>
+            <h3>Did You Know?</h3>
+            <ul>
+                <li>When you're eating alone and a spoon fell, don't look at your right side because there is a possibility that you will see bloody feet.</li>
+                <li>If a big black butterfly landed in your house, there will someone who'll die.</li>
+                <li>Every house has its guarding souls/spirits.</li>
+                <li>Every time you blink, someone dies.</li>
+                <li>If you remember your dream, it's not a dream; it's a message.</li>
+                <li>Most children can see ghosts sometimes, so when kids tell you they see one, they may be telling the truth.</li>
+                <li>If you dream that someone is chasing you, someone is threatening your life.</li>
+                <li>Legends say when you can't sleep at night, it's because you're awake in someone else's dream.</li>
+                <li>According to legends, when you sleep sad, there's a demon hugging you.</li>
+                <li>Legend says when you pee in your dreams, you are peeing yourself in real life.</li>
+                <li>Most ghosts are attracted to human's laugh, so the more you laugh, the more you attract ghosts.</li>
+                <li>Snoopy X is Nobody!</li>
+         <p>WHAT!</p>  </ul> 
+        </div>
+
+        <!-- Quiz Page -->
+        <div id="quiz-page" class="quiz" style="display:none;">
+            <h2>Quizzes</h2>
+            <form id="quiz-form">
+                <div id="question-container">
+                    <div id="question1" class="question">
+                        <h3>Question 1: When you're eating alone and a spoon falls, what is the possibility?</h3>
+                        <input type="radio" id="q1a" name="q1" value="a">
+                        <label for="q1a">You will see bloody feet</label><br>
+                        <input type="radio" id="q1b" name="q1" value="b">
+                        <label for="q1b">A ghost will appear</label><br>
+                        <input type="radio" id="q1c" name="q1" value="c">
+                        <label for="q1c">You will hear a knock on the door</label><br>
+                    </div>
+                    <div id="question2" class="question">
+                        <h3>Question 2: What happens if a big black butterfly lands in your house?</h3>
+                        <input type="radio" id="q2a" name="q2" value="a">
+                        <label for="q2a">A good omen will follow</label><br>
+                        <input type="radio" id="q2b" name="q2" value="b">
+                        <label for="q2b">Someone will die</label><br>
+                        <input type="radio" id="q2c" name="q2" value="c">
+                        <label for="q2c">It will bring bad luck</label><br>
+                    </div>
+                    <div id="question3" class="question">
+                        <h3>Question 3: What is said to guard every house?</h3>
+                        <input type="radio" id="q3a" name="q3" value="a">
+                        <label for="q3a">Souls/spirits</label><br>
+                        <input type="radio" id="q3b" name="q3" value="b">
+                        <label for="q3b">Angels</label><br>
+                        <input type="radio" id="q3c" name="q3" value="c">
+                        <label for="q3c">Witches</label><br>
+                    </div>
+                    <div id="question4" class="question">
+                        <h3>Question 4: What happens every time you blink?</h3>
+                        <input type="radio" id="q4a" name="q4" value="a">
+                        <label for="q4a">Someone dies</label><br>
+                        <input type="radio" id="q4b" name="q4" value="b">
+                        <label for="q4b">A ghost appears</label><br>
+                        <input type="radio" id="q4c" name="q4" value="c">
+                        <label for="q4c">A bad omen occurs</label><br>
+                    </div>
+                    <div id="question5" class="question">
+                        <h3>Question 5: What is said to happen when you sleep sad?</h3>
+                        <input type="radio" id="q5a" name="q5" value="a">
+                        <label for="q5a">A demon hugs you</label><br>
+                        <input type="radio" id="q5b" name="q5" value="b">
+                        <label for="q5b">You get nightmares</label><br>
+                        <input type="radio" id="q5c" name="q5" value="c">
+                        <label for="q5c">You get a visit from an angel</label><br>
+                    </div>
+                </div>
+                <button type="button" class="btn" onclick="submitQuiz()">Submit Quiz</button>
+            </form> <p>This webpage is not fully developed</p>
+        </div>
+
+        <!-- Score Page -->
+        <div id="score-page" style="display:none;">
+            <h2>Your Score: <span id="score">0</span> out of 5</h2>
+            <button class="btn" onclick="showBiography()">About Snoopy X</button>
+        </div>
+
+        <!-- Biography Page -->
+        <div id="bio-page" class="bio" style="display:none;">
+            <h2>About Snoopy X</h2>
+            <p>I'm <strong>Joy Mokadi</strong>, also known as <strong>Snoopy X</strong>, the Creepy Threader. I'm from Mamelodi East, Pretoria, Gauteng, South Africa. A curious soul with a passion for uncovering the bizarre and the unexplained. My journey into the world of creepy facts and mysteries started when I was a child, fascinated by the unknown and strange occurrences around the world.</p>
+            <p>I am a seeker of all things eerie, from haunted places to unsolved mysteries. I’ve made it my mission to bring you some of the most spine-chilling facts out there, and I share them with you in a way that’ll make you think twice before you go to sleep tonight!</p>
+            <p>In addition to creepy facts, I also delve into fascinating topics like the science of the unknown, the psychology of fear, and strange phenomena that will make your skin crawl. My goal is to keep you on the edge of your seat with every new thread I share.</p>
+            <button class="btn" onclick="goBack()">Go Back</button>
+        </div> <p></p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Snoopy X's Creepy Facts | <a href="mailto:contact@snoopyxcreepyfacts.com">Contact</a></p>
+    </footer>
+
+    <script>
+        function showQuestions() {
+            document.getElementById('welcome-screen').style.display = 'none';
+            document.getElementById('questions').style.display = 'block';
+        }
+
+        function submitForm() {
+            document.getElementById('questions').style.display = 'none';
+            document.getElementById('facts').style.display = 'block';
+        }
+
+        function showQuiz() {
+            document.getElementById('facts').style.display = 'none';
+            document.getElementById('quiz-page').style.display = 'block';
+        }
+
+        function submitQuiz() {
+            let score = 0;
+            if (document.getElementById('q1a').checked) score++;
+            if (document.getElementById('q2b').checked) score++;
+            if (document.getElementById('q3a').checked) score++;
+            if (document.getElementById('q4a').checked) score++;
+            if (document.getElementById('q5a').checked) score++;
+            document.getElementById('score').innerText = score;
+            document.getElementById('quiz-page').style.display = 'none';
+            document.getElementById('score-page').style.display = 'block';
+        }
+
+        function showBiography() {
+            document.getElementById('score-page').style.display = 'none';
+            document.getElementById('bio-page').style.display = 'block';
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+</body>
+</html>
